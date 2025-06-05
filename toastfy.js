@@ -1,6 +1,8 @@
-import { useThemeStore } from "@/stores/themeStore";
+// Toastify brabo by Victor – simples, estiloso e modular
 
-export function showToast(message, type = 'info', duration = 3000, autoClose = true, onView = null) {
+// Mostra o toast na tela
+function showToast(message, type = 'info', duration = 3000, autoClose = true, onView = null) {
+    // Certifique-se de ter um elemento <section class="toast-custom-area"></section> no seu HTML
     const toastArea = document.querySelector('.toast-custom-area');
 
     const toast = document.createElement('div');
@@ -13,7 +15,7 @@ export function showToast(message, type = 'info', duration = 3000, autoClose = t
         icon.className = 'fa-solid fa-circle-xmark';
     } else if (type === 'warning') {
         icon.className = 'fa-solid fa-triangle-exclamation';
-    } else if (type === 'info') {
+    } else {
         icon.className = 'fa-solid fa-circle-info';
     }
 
@@ -90,10 +92,9 @@ export function showToast(message, type = 'info', duration = 3000, autoClose = t
         toast.addEventListener('mouseleave', startInterval);
     }
 
-    const themeStore = useThemeStore()
-
-    if (type === 'success' && themeStore.notificationSound) {
-        const audio = new Audio('/audio/notification-4.mp3');
+    // Se quiser som de notificação, importe o seu áudio aqui
+    if (type === 'success') {
+        const audio = new Audio('/audio/notification-4.mp3'); // Altere o path conforme o seu projeto
         audio.play().catch((err) => {
             console.warn('Falha ao tocar áudio de notificação:', err);
         });

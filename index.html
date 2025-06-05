@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exemplo Toastify</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="toastfy.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="toast-custom-area"></section>
+
+    <script src="toastfy.js"></script>
+    <script>
+        // Exemplos de uso:
+        showToast('Tudo certo por aqui!', 'success', 3000);
+        showToast('Algo deu errado...', 'error', 4000);
+        showToast('Atenção, revise os dados.', 'warning', 5000);
+        showToast('Essa é uma informação qualquer.', 'info', 6000);
+    </script>
+</body>
+
+</html>

@@ -1,3 +1,7 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 .toast-custom-area {
     position: fixed;
     top: 15px;
