@@ -1,0 +1,106 @@
+.toast-custom-area {
+    position: fixed;
+    top: 15px;
+    right: 20px; 
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-custom {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(150%);
+    transition: transform 1s ease, opacity 1s ease;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500; 
+    max-width: 300px; 
+    width: 100%;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden; 
+}
+
+.toast-custom.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-custom.success {
+    background-color: rgb(0 184 89 / 86%); 
+}
+
+.toast-custom.error {
+    background-color: rgb(255, 77, 77, 86%); 
+}
+
+.toast-custom.warning {
+    background-color: rgb(255, 152, 0, 86%);
+}
+
+.toast-custom.info {
+    background-color: rgb(97, 126, 140, 86%)
+}
+
+.toast-custom i {
+    margin-right: 12px; 
+    font-size: 18px; 
+}
+
+.toast-custom p {
+    color: #fff;
+    margin: 0;
+}
+
+.toast-close-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto; 
+    padding: 0;
+    line-height: 1;
+    align-self: flex-start; 
+}
+
+.toast-close-button:hover {
+    color: #ccc; 
+}
+
+.toast-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    transition: width 0.05s linear; 
+}
+
+@media (max-width: 768px) { /* Ajuste para dispositivos móveis */
+    .toast-custom-area {
+        top: 15px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        right: auto;
+        gap: 15px; /* Ajuste o espaçamento entre os toasts */
+    }
+
+    .toast-custom {
+        transform: translateY(-150%); /* Começa fora da tela, acima */
+        transition: transform 1s ease, opacity 1s ease;
+    }
+
+    .toast-custom.show {
+        transform: translateY(0); /* Move para a posição central */
+    }
+}
